@@ -127,6 +127,7 @@ namespace QLThuVien
             MessageBox.Show("Trả thành công!");
 
             button3_Click(sender,  e);
+            btnTraSach.Enabled = false;
         }
 
         private void dgvSachMuon_MouseClick(object sender, MouseEventArgs e)

@@ -38,9 +38,25 @@ namespace QLThuVien
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Form1 fm = new Form1();
-            fm.Show();
-            this.Hide();
+            if (Form1.user == "")
+            {
+                Form1 fm = new Form1();
+                fm.Show();
+                this.Hide();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void FrmDoiMK_Load(object sender, EventArgs e)
+        {
+            if (Form1.user != "")
+            {
+                btnExit.Visible = false;
+            }
+
         }
     }
 }

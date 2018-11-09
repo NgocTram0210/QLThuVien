@@ -47,7 +47,7 @@ namespace QLThuVien
                 string bp = (string)DataConnection.RunsqlScalar(sql1);
                 boPhan = bp;
                 user = txtName.Text;
-                MessageBox.Show("Đăng nhập thành công!");
+
                 ribbonControl1.Visible = true;
                 groupBox1.Visible = false;
             }

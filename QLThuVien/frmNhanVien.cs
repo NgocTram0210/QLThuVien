@@ -124,6 +124,7 @@ namespace QLThuVien
                 strSQL = @"insert into NHANVIEN values ('" + cbxMaNV.Text + "',N'" + txtHoten.Text + "','" + d + "',N'" + txtDiachi.Text + "','" + txtEmail.Text + "','" + txtDienthai.Text + "','" + bc + "','" + bp + "','" + cv + "','" + txtAccount.Text + "','" + txtPass.Text + "')";
                 t = DataConnection.RunsqlQuery(strSQL);
                 displayData();
+                    btSua.Enabled = true;
                     MessageBox.Show("Lưu thành công!");
                 }
                 else
@@ -164,6 +165,7 @@ namespace QLThuVien
         private void btThem_Click(object sender, EventArgs e)
         {
             btLuu.Enabled = true;
+            btSua.Enabled = false;
             txtAccount.Text = "";
             txtDiachi.Text = "";
             txtDienthai.Text = "";
@@ -190,6 +192,7 @@ namespace QLThuVien
             cbxBophan.SelectedValue = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
             cbxChucvu.SelectedValue = dgvNhanVien.CurrentRow.Cells[8].Value.ToString();
             btLuu.Enabled = false;
+            btSua.Enabled = true;
         }
         public bool isValidEmail(string inputEmail)
         {

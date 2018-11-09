@@ -192,6 +192,7 @@
             this.barButtonItem1.Caption = "Sách";
             this.barButtonItem1.Id = 1;
             this.barButtonItem1.ImageOptions.Image = global::QLThuVien.Properties.Resources.books;
+            this.barButtonItem1.LargeWidth = 70;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
@@ -201,6 +202,7 @@
             this.barButtonItem2.Caption = "Nhân Viên";
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.ImageOptions.Image = global::QLThuVien.Properties.Resources.student;
+            this.barButtonItem2.LargeWidth = 70;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
@@ -210,6 +212,7 @@
             this.barButtonItem3.Caption = "Mượn Sách";
             this.barButtonItem3.Id = 3;
             this.barButtonItem3.ImageOptions.Image = global::QLThuVien.Properties.Resources.barrow;
+            this.barButtonItem3.LargeWidth = 70;
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
@@ -219,6 +222,7 @@
             this.barButtonItem4.Caption = "Độc Giả";
             this.barButtonItem4.Id = 4;
             this.barButtonItem4.ImageOptions.LargeImage = global::QLThuVien.Properties.Resources.id_card;
+            this.barButtonItem4.LargeWidth = 70;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
@@ -228,6 +232,7 @@
             this.barButtonItem5.Caption = "Giới thiệu";
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.ImageOptions.Image = global::QLThuVien.Properties.Resources.creativity;
+            this.barButtonItem5.LargeWidth = 70;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -236,6 +241,7 @@
             this.barButtonItem6.Caption = "Đăng xuất";
             this.barButtonItem6.Id = 6;
             this.barButtonItem6.ImageOptions.Image = global::QLThuVien.Properties.Resources.exit__1_;
+            this.barButtonItem6.LargeWidth = 70;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
@@ -245,6 +251,7 @@
             this.barButtonItem7.Caption = "Thoát";
             this.barButtonItem7.Id = 7;
             this.barButtonItem7.ImageOptions.Image = global::QLThuVien.Properties.Resources.exit;
+            this.barButtonItem7.LargeWidth = 70;
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -253,6 +260,7 @@
             this.barButtonItem8.Caption = "Đổi mật khẩu";
             this.barButtonItem8.Id = 8;
             this.barButtonItem8.ImageOptions.Image = global::QLThuVien.Properties.Resources.key__1_;
+            this.barButtonItem8.LargeWidth = 70;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
@@ -262,6 +270,7 @@
             this.barButtonItem9.Caption = "Trả Sách";
             this.barButtonItem9.Id = 9;
             this.barButtonItem9.ImageOptions.Image = global::QLThuVien.Properties.Resources.studying;
+            this.barButtonItem9.LargeWidth = 70;
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
@@ -302,20 +311,20 @@
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "About";
             // 
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Uers";
             // 
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Exit";
             // 
             // groupBox1
             // 
