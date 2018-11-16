@@ -112,11 +112,9 @@ namespace QLThuVien
                 DialogResult result = MessageBox.Show("Bạn Muốn xóa cuốn sách có mã là " + cbxMaSach.Text + " phải không?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    strSQL = @"delete from THONGKEMUONSACH where MaSach ='" + cbxMaSach.Text + "'";
-                    t = DataConnection.RunsqlQuery(strSQL);
-
-                    strSQL = @"delete from SACH where MaSach ='" + cbxMaSach.Text + "'";
-                    t = DataConnection.RunsqlQuery(strSQL);
+                    strSQL = @"EXEC dbo.XoaSach @maSach = '" + cbxMaSach.Text + "'";
+                    string tt = (string)DataConnection.RunsqlScalar(strSQL);
+                    MessageBox.Show(tt);
                     displayData();
                 }
             }

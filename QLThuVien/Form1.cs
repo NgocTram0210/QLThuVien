@@ -133,5 +133,14 @@ namespace QLThuVien
             fm.MdiParent = this;
             fm.Show();
         }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmReport fm = new frmReport();
+            bool Exist = ExistForm(fm);
+            if (Exist) return;
+            fm.MdiParent = this;
+            fm.Show();
+        }
     }
 }

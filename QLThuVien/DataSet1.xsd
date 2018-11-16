@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLTHUVIENConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLTHUVIENConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLThuVien.Properties.Settings.GlobalReference.Default.QLTHUVIENConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ThongKeDGTableAdapter" GeneratorDataComponentClassName="ThongKeDGTableAdapter" Name="ThongKeDG" UserDataComponentName="ThongKeDGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLTHUVIENConnectionString (Settings)" DbObjectName="QLTHUVIEN.dbo.ThongKeDG" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ThongKeDG_1.*
+FROM            dbo.ThongKeDG() AS ThongKeDG_1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaDG" DataSetColumn="MaDG" />
+              <Mapping SourceColumn="HoTen" DataSetColumn="HoTen" />
+              <Mapping SourceColumn="NgayLap" DataSetColumn="NgayLap" />
+              <Mapping SourceColumn="TenSach" DataSetColumn="TenSach" />
+              <Mapping SourceColumn="NGAYMUON" DataSetColumn="NGAYMUON" />
+              <Mapping SourceColumn="TinhTrang" DataSetColumn="TinhTrang" />
+              <Mapping SourceColumn="TraSach" DataSetColumn="TraSach" />
+              <Mapping SourceColumn="TongMuon" DataSetColumn="TongMuon" />
+              <Mapping SourceColumn="slMuon" DataSetColumn="slMuon" />
+              <Mapping SourceColumn="slDung" DataSetColumn="slDung" />
+              <Mapping SourceColumn="slTraMuon" DataSetColumn="slTraMuon" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ThongKeDG" msprop:Generator_TableClassName="ThongKeDGDataTable" msprop:Generator_TableVarName="tableThongKeDG" msprop:Generator_TablePropName="ThongKeDG" msprop:Generator_RowDeletingName="ThongKeDGRowDeleting" msprop:Generator_RowChangingName="ThongKeDGRowChanging" msprop:Generator_RowEvHandlerName="ThongKeDGRowChangeEventHandler" msprop:Generator_RowDeletedName="ThongKeDGRowDeleted" msprop:Generator_UserTableName="ThongKeDG" msprop:Generator_RowChangedName="ThongKeDGRowChanged" msprop:Generator_RowEvArgName="ThongKeDGRowChangeEvent" msprop:Generator_RowClassName="ThongKeDGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaDG" msprop:Generator_ColumnVarNameInTable="columnMaDG" msprop:Generator_ColumnPropNameInRow="MaDG" msprop:Generator_ColumnPropNameInTable="MaDGColumn" msprop:Generator_UserColumnName="MaDG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HoTen" msprop:Generator_ColumnVarNameInTable="columnHoTen" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_UserColumnName="HoTen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NgayLap" msprop:Generator_ColumnVarNameInTable="columnNgayLap" msprop:Generator_ColumnPropNameInRow="NgayLap" msprop:Generator_ColumnPropNameInTable="NgayLapColumn" msprop:Generator_UserColumnName="NgayLap" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TenSach" msprop:Generator_ColumnVarNameInTable="columnTenSach" msprop:Generator_ColumnPropNameInRow="TenSach" msprop:Generator_ColumnPropNameInTable="TenSachColumn" msprop:Generator_UserColumnName="TenSach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYMUON" msprop:Generator_ColumnVarNameInTable="columnNGAYMUON" msprop:Generator_ColumnPropNameInRow="NGAYMUON" msprop:Generator_ColumnPropNameInTable="NGAYMUONColumn" msprop:Generator_UserColumnName="NGAYMUON" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TinhTrang" msprop:Generator_ColumnVarNameInTable="columnTinhTrang" msprop:Generator_ColumnPropNameInRow="TinhTrang" msprop:Generator_ColumnPropNameInTable="TinhTrangColumn" msprop:Generator_UserColumnName="TinhTrang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TraSach" msprop:Generator_ColumnVarNameInTable="columnTraSach" msprop:Generator_ColumnPropNameInRow="TraSach" msprop:Generator_ColumnPropNameInTable="TraSachColumn" msprop:Generator_UserColumnName="TraSach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TongMuon" msprop:Generator_ColumnVarNameInTable="columnTongMuon" msprop:Generator_ColumnPropNameInRow="TongMuon" msprop:Generator_ColumnPropNameInTable="TongMuonColumn" msprop:Generator_UserColumnName="TongMuon" type="xs:int" minOccurs="0" />
+              <xs:element name="slMuon" msprop:Generator_ColumnVarNameInTable="columnslMuon" msprop:Generator_ColumnPropNameInRow="slMuon" msprop:Generator_ColumnPropNameInTable="slMuonColumn" msprop:Generator_UserColumnName="slMuon" type="xs:int" minOccurs="0" />
+              <xs:element name="slDung" msprop:Generator_ColumnVarNameInTable="columnslDung" msprop:Generator_ColumnPropNameInRow="slDung" msprop:Generator_ColumnPropNameInTable="slDungColumn" msprop:Generator_UserColumnName="slDung" type="xs:int" minOccurs="0" />
+              <xs:element name="slTraMuon" msprop:Generator_ColumnVarNameInTable="columnslTraMuon" msprop:Generator_ColumnPropNameInRow="slTraMuon" msprop:Generator_ColumnPropNameInTable="slTraMuonColumn" msprop:Generator_UserColumnName="slTraMuon" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

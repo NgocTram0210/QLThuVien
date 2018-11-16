@@ -1,0 +1,60 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BOL
+{
+    [Table("ChiTietPhieuDat")]
+    public class ChiTietPhieuDat
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Mã chi tiết phiếu đặt")]
+        [Required(ErrorMessage = "Chưa nhập Mã chi tiết phiếu đặt!")]
+        public long MaChiTietPhieuDat { get; set; }
+
+
+        [Display(Name = "Mã phiếu đặt")]
+        public string MaPhieuDat { get; set; }
+        [ForeignKey("MaPhieuDat")]
+        public PhieuDat PhieuDat { get; set; }
+
+        [Display(Name = "Mã sản phẩm")]
+        [Required(ErrorMessage = "Chưa chọn sản phẩm!")]
+        [StringLength(40, ErrorMessage = "Tối đa 40 kí tự!")]
+        public string MaSanPham { get; set; }
+        public virtual SanPham SanPham { get; set; }
+
+
+        [Display(Name = "Đơn vị tính")]
+        [Required(ErrorMessage = "Chưa chọn đơn vị tính!")]
+        [StringLength(20, ErrorMessage = "Tối đa 20 kí tự!")]
+        public string MaDonViTinh { get; set; }
+        [ForeignKey("MaDonViTinh")]
+        public virtual DonViTinh DonViTinh { get; set; }
+
+
+        [Display(Name = "Giá bán")]
+        [Required(ErrorMessage = "Chưa nhập giá bán!")]
+        [StringLength(20, ErrorMessage = "Tối đa 20 kí tự!")]
+        public string GiaBan { get; set; }
+
+
+        [Display(Name = "Kho vật tư")]
+        [StringLength(20, ErrorMessage = "Tối đa 20 kí tự!")]
+        public string MaTramBeTong { get; set; }
+        [ForeignKey("MaTramBeTong")]
+        public virtual TramBeTong TramBeTong { get; set; }
+
+
+        [Display(Name = "Lợi nhuận")]
+        [StringLength(20, ErrorMessage = "Tối đa 20 kí tự!")]
+        public string LoiNhuan { get; set; }
+
+        [Required(ErrorMessage = "Chưa nhập số lượng!")]
+        [Display(Name = "Số lượng")]
+
+        [StringLength(7, ErrorMessage = "Tối đa 7 kí tự!")]
+        public string SoLuong { get; set; }
+
+    }
+}

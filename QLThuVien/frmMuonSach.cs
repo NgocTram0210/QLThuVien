@@ -28,7 +28,7 @@ namespace QLThuVien
 
         private void cbxDG_SelectedIndexChanged(object sender, EventArgs e)
         {
-            strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', b.NgayMuon AS 'Ngày Mượn', b.Han AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon and HoTen like N'%" + cbxDG.Text.ToString()+ "%'";
+            strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', convert(date,b.NgayMuon) AS 'Ngày Mượn', convert(date,b.Han) AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon and HoTen like N'%" + cbxDG.Text.ToString()+ "%'";
             ds = new DataSet();
             ds = DataConnection.GetDataSet(strSQL);
             dgvSachMuon.DataSource = ds.Tables[0];
@@ -40,7 +40,7 @@ namespace QLThuVien
             {}
             else
             {
-                strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', b.NgayMuon AS 'Ngày Mượn', b.Han AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon and MaPM like '" + cbxPML.Text.ToString() + "'";
+                strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', convert(date,b.NgayMuon) AS 'Ngày Mượn', convert(date,b.Han) AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon and MaPM like '" + cbxPML.Text.ToString() + "'";
                 ds = new DataSet();
                 ds = DataConnection.GetDataSet(strSQL);
                 dgvSachMuon.DataSource = ds.Tables[0];
@@ -49,7 +49,7 @@ namespace QLThuVien
 
         private void button3_Click(object sender, EventArgs e)
         {
-            strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', b.NgayMuon AS 'Ngày Mượn', b.Han AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon";
+            strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', convert(date,b.NgayMuon) AS 'Ngày Mượn', convert(date,b.Han) AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon";
             ds = new DataSet();
             ds = DataConnection.GetDataSet(strSQL);
             dgvSachMuon.DataSource = ds.Tables[0];
@@ -97,7 +97,7 @@ namespace QLThuVien
 
         private void frmMuonSach_Load(object sender, EventArgs e)
         {
-            strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', b.NgayMuon AS 'Ngày Mượn', b.Han AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon";
+            strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', convert(date,b.NgayMuon) AS 'Ngày Mượn', convert(date,b.Han) AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon";
             ds = new DataSet();
             ds = DataConnection.GetDataSet(strSQL);
             dgvSachMuon.DataSource = ds.Tables[0];

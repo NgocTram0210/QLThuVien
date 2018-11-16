@@ -120,7 +120,7 @@ namespace QLThuVien
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            strSQL = @" UPDATE dbo.CTMUONSACH SET TinhTrang = 0 WHERE MaPM= "+maPM+ " AND SachMuon = = (SELECT MaSach FROM dbo.SACH WHERE TenSach = '"+maSach+"')";
+            strSQL = @" UPDATE dbo.CTMUONSACH SET TinhTrang = 0, NgayTra = GETDATE() WHERE MaPM= " + maPM+ " AND SachMuon = (SELECT MaSach FROM dbo.SACH WHERE TenSach = N'"+maSach+"')";
 
             t = DataConnection.RunsqlQuery(strSQL);
             

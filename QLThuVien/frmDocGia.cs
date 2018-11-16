@@ -94,13 +94,11 @@ namespace QLThuVien
                 DialogResult result = MessageBox.Show("Bạn Muốn xóa Độc Giả có mã là " + cbxMaDG.Text + " phải không?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    strSQL = @"select MaSach from THONGKEMUONSACH,MUONSACH where MaDG='" + cbxMaDG.Text + "' and MaPM=MaPhieuMuon";
+                    strSQL = @"select MaSach from MUONSACH where MaDG='" + cbxMaDG.Text + "'";
                     m = DataConnection.RunsqlScalar(strSQL);
                     if (m != null)
                     {
-                        strSQL = @"delete from THONGKEMUONSACH where MaPM =( select MaPhieumuon from MUONSACH where MaDG='" + cbxMaDG.Text + "')";
-                        t = DataConnection.RunsqlQuery(strSQL);
-
+                        
                         strSQL = @"delete from MUONSACH where MaDG ='" + cbxMaDG.Text + "'";
                         t = DataConnection.RunsqlQuery(strSQL);
                     }
