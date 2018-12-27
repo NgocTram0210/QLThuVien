@@ -33,6 +33,14 @@ namespace QLThuVien
         }
         private void frmDocGia_Load(object sender, EventArgs e)
         {
+            if (Form1.boPhan != "BP1")
+            {
+                btLapthe.Enabled = false;
+                btLuu.Enabled = false;
+                btSua.Enabled = false;
+                btXoa.Enabled = false;
+            }
+
             //load dữ liệu cho cbx mã độc giả và girdview
             strSQL = @"EXEC SelectAllDocGia";
             ds = new DataSet();
@@ -128,6 +136,7 @@ namespace QLThuVien
                     t = DataConnection.RunsqlQuery(strSQL);
                     displayData();
                     MessageBox.Show("Lập thẻ thành công!");
+                    
                 }
                 else
                     MessageBox.Show("Email không hợp lệ!");
@@ -162,8 +171,8 @@ namespace QLThuVien
             txtHoten.Text = "";
             cbxLoai.SelectedIndex = -1;
             cbxMaDG.Text = "";
-            cbxNVLap.SelectedIndex = -1;
-            
+            strSQL = @"select MaNV from NHANVIEN where Account = N'"+ Form1.user + "'";
+            cbxNVLap.SelectedValue = DataConnection.RunsqlScalar(strSQL);
         }
 
         

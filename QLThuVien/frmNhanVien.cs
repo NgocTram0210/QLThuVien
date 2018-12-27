@@ -33,6 +33,13 @@ namespace QLThuVien
         }
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
+            if (Form1.boPhan != "BP3")
+            {
+                btThem.Enabled = false;
+                btLuu.Enabled = false;
+                btSua.Enabled = false;
+                btXoa.Enabled = false;
+            }
             //load dữ liệu cho cbx nhân viên và gridview
             strSQL = @"EXEC SelectAllNhanVien";
             ds = new DataSet();
@@ -41,22 +48,6 @@ namespace QLThuVien
             cbxMaNV.DisplayMember = "Mã Nhân Viên";
             cbxMaNV.ValueMember = "Mã Nhân Viên";
             dgvNhanVien.DataSource = ds.Tables[0];
-
-            //load dữ liệu cho cbx bằng cấp
-            strSQL = @"select * from BANGCAP";
-            ds = new DataSet();
-            ds = DataConnection.GetDataSet(strSQL);
-            cbxBangcap.DataSource = ds.Tables[0];
-            cbxBangcap.DisplayMember = "TenBC";
-            cbxBangcap.ValueMember = "MaBC";
-
-            //load dữ liệu cho cbx chức vụ
-            strSQL = @"select * from CHUCVU";
-            ds = new DataSet();
-            ds = DataConnection.GetDataSet(strSQL);
-            cbxChucvu.DataSource = ds.Tables[0];
-            cbxChucvu.DisplayMember = "TenCV";
-            cbxChucvu.ValueMember = "MaCV";
 
             //load dữ liệu cho cbx bộ phận
             strSQL = @"select * from BOPHAN";
@@ -73,11 +64,9 @@ namespace QLThuVien
             txtDiachi.Text = dgvNhanVien[3, 0].Value.ToString();
             txtEmail.Text = dgvNhanVien[4, 0].Value.ToString();
             txtDienthai.Text = dgvNhanVien[5, 0].Value.ToString();
-            txtAccount.Text = dgvNhanVien[9, 0].Value.ToString();
-            txtPass.Text = dgvNhanVien[10, 0].Value.ToString();
-            cbxBangcap.SelectedValue = dgvNhanVien[6, 0].Value.ToString();
-            cbxBophan.SelectedValue = dgvNhanVien[7, 0].Value.ToString();
-            cbxChucvu.SelectedValue = dgvNhanVien[8, 0].Value.ToString();
+            txtAccount.Text = dgvNhanVien[7, 0].Value.ToString();
+            txtPass.Text = dgvNhanVien[8, 0].Value.ToString();
+            cbxBophan.SelectedValue = dgvNhanVien[6, 0].Value.ToString();
         }
 
         private void dgvNhanVien_MouseClick(object sender, MouseEventArgs e)
@@ -88,11 +77,9 @@ namespace QLThuVien
             txtDiachi.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
             txtEmail.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
             txtDienthai.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
-            txtAccount.Text = dgvNhanVien.CurrentRow.Cells[9].Value.ToString();
-            txtPass.Text = dgvNhanVien.CurrentRow.Cells[10].Value.ToString();
-            cbxBangcap.SelectedValue = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
-            cbxBophan.SelectedValue = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
-            cbxChucvu.SelectedValue = dgvNhanVien.CurrentRow.Cells[8].Value.ToString();
+            txtAccount.Text = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
+            txtPass.Text = dgvNhanVien.CurrentRow.Cells[8].Value.ToString();
+            cbxBophan.SelectedValue = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
             btLuu.Enabled = false;
         }
 
@@ -117,11 +104,9 @@ namespace QLThuVien
                 {
                     string bc, bp, cv, d;
                 bp = cbxBophan.SelectedValue.ToString();
-                bc = cbxBangcap.SelectedValue.ToString();
-                cv = cbxChucvu.SelectedValue.ToString();
                 d = dtNgaySinh.Value.ToString("yyyy/MM/dd");
 
-                strSQL = @"insert into NHANVIEN values ('" + cbxMaNV.Text + "',N'" + txtHoten.Text + "','" + d + "',N'" + txtDiachi.Text + "','" + txtEmail.Text + "','" + txtDienthai.Text + "','" + bc + "','" + bp + "','" + cv + "','" + txtAccount.Text + "','" + txtPass.Text + "')";
+                strSQL = @"insert into NHANVIEN values ('" + cbxMaNV.Text + "',N'" + txtHoten.Text + "','" + d + "',N'" + txtDiachi.Text + "','" + txtEmail.Text + "','" + txtDienthai.Text + "','" + bp + "','"  + txtAccount.Text + "','" + txtPass.Text + "')";
                 t = DataConnection.RunsqlQuery(strSQL);
                 displayData();
                     btSua.Enabled = true;
@@ -138,12 +123,10 @@ namespace QLThuVien
             {
                 string bc, bp, cv;
                 bp = cbxBophan.SelectedValue.ToString();
-                bc = cbxBangcap.SelectedValue.ToString();
-                cv = cbxChucvu.SelectedValue.ToString();
 
                 strSQL = @"update NHANVIEN set HoTen=N'" + txtHoten.Text + "',NgaySinh='" + dtNgaySinh.Value.ToString("yyyy/MM/dd") + "',DiaChi=N'"
-                    + txtDiachi.Text + "',DienThoai='" + txtDienthai.Text + "',Email='" + txtEmail.Text + "',BoPhan='" + bp + "',ChucVu='" + cv
-                    + "',BangCap='" + bc + "',Account='" + txtAccount.Text + "', Pass='" + txtPass.Text + "' where MaNV='" + cbxMaNV.Text + "'";
+                    + txtDiachi.Text + "',DienThoai='" + txtDienthai.Text + "',Email='" + txtEmail.Text + "',BoPhan='" + bp 
+                    + "',Account='" + txtAccount.Text + "', Pass='" + txtPass.Text + "' where MaNV='" + cbxMaNV.Text + "'";
 
                 t = DataConnection.RunsqlQuery(strSQL);
                 displayData();
@@ -173,9 +156,7 @@ namespace QLThuVien
             txtHoten.Text = "";
             txtPass.Text = "";
             cbxMaNV.Text = "";
-            cbxChucvu.SelectedIndex = -1;
             cbxBophan.SelectedIndex = -1;
-            cbxBangcap.SelectedIndex = -1;
         }
 
         private void dgvNhanVien_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -186,11 +167,9 @@ namespace QLThuVien
             txtDiachi.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
             txtEmail.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
             txtDienthai.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
-            txtAccount.Text = dgvNhanVien.CurrentRow.Cells[9].Value.ToString();
-            txtPass.Text = dgvNhanVien.CurrentRow.Cells[10].Value.ToString();
-            cbxBangcap.SelectedValue = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
-            cbxBophan.SelectedValue = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
-            cbxChucvu.SelectedValue = dgvNhanVien.CurrentRow.Cells[8].Value.ToString();
+            txtAccount.Text = dgvNhanVien.CurrentRow.Cells[7].Value.ToString();
+            txtPass.Text = dgvNhanVien.CurrentRow.Cells[8].Value.ToString();
+            cbxBophan.SelectedValue = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
             btLuu.Enabled = false;
             btSua.Enabled = true;
         }

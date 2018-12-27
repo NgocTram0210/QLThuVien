@@ -60,9 +60,9 @@
             this.crvDSDG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvDSDG.Cursor = System.Windows.Forms.Cursors.Default;
             this.crvDSDG.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.crvDSDG.Location = new System.Drawing.Point(0, 76);
+            this.crvDSDG.Location = new System.Drawing.Point(0, 56);
             this.crvDSDG.Name = "crvDSDG";
-            this.crvDSDG.Size = new System.Drawing.Size(960, 366);
+            this.crvDSDG.Size = new System.Drawing.Size(960, 386);
             this.crvDSDG.TabIndex = 3;
             // 
             // btXuat
@@ -88,7 +88,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxDG);
             this.Name = "frmReport";
-            this.Text = "frmReport";
+            this.Text = "Report";
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

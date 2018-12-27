@@ -59,7 +59,10 @@ namespace QLThuVien
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button2.Enabled = true;
+            if (Form1.boPhan == "BP1")
+            {
+                button2.Enabled = true;
+            }
             bool kt = false;
             foreach(var i in maSach)
             {
@@ -97,6 +100,10 @@ namespace QLThuVien
 
         private void frmMuonSach_Load(object sender, EventArgs e)
         {
+            if (Form1.boPhan != "BP1")
+            {
+                button2.Enabled = false;
+            }
             strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', convert(date,b.NgayMuon) AS 'Ngày Mượn', convert(date,b.Han) AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon";
             ds = new DataSet();
             ds = DataConnection.GetDataSet(strSQL);

@@ -67,6 +67,7 @@
             // cbxNVLap
             // 
             this.cbxNVLap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNVLap.Enabled = false;
             this.cbxNVLap.FormattingEnabled = true;
             this.cbxNVLap.Location = new System.Drawing.Point(617, 184);
             this.cbxNVLap.Name = "cbxNVLap";

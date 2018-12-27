@@ -34,9 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cbxMaNV = new System.Windows.Forms.ComboBox();
-            this.cbxBangcap = new System.Windows.Forms.ComboBox();
             this.cbxBophan = new System.Windows.Forms.ComboBox();
-            this.cbxChucvu = new System.Windows.Forms.ComboBox();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtDienthai = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -46,9 +44,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,14 +60,14 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(491, 225);
+            this.txtPass.Location = new System.Drawing.Point(378, 192);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(146, 21);
             this.txtPass.TabIndex = 61;
             // 
             // txtAccount
             // 
-            this.txtAccount.Location = new System.Drawing.Point(237, 225);
+            this.txtAccount.Location = new System.Drawing.Point(124, 192);
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(137, 21);
             this.txtAccount.TabIndex = 60;
@@ -80,7 +76,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(396, 224);
+            this.label4.Location = new System.Drawing.Point(283, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 19);
             this.label4.TabIndex = 59;
@@ -90,7 +86,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(147, 225);
+            this.label12.Location = new System.Drawing.Point(34, 192);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 19);
             this.label12.TabIndex = 58;
@@ -104,43 +100,25 @@
             this.cbxMaNV.Size = new System.Drawing.Size(137, 21);
             this.cbxMaNV.TabIndex = 56;
             // 
-            // cbxBangcap
-            // 
-            this.cbxBangcap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxBangcap.FormattingEnabled = true;
-            this.cbxBangcap.Location = new System.Drawing.Point(658, 126);
-            this.cbxBangcap.Name = "cbxBangcap";
-            this.cbxBangcap.Size = new System.Drawing.Size(121, 21);
-            this.cbxBangcap.TabIndex = 55;
-            // 
             // cbxBophan
             // 
             this.cbxBophan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBophan.FormattingEnabled = true;
             this.cbxBophan.Location = new System.Drawing.Point(658, 159);
             this.cbxBophan.Name = "cbxBophan";
-            this.cbxBophan.Size = new System.Drawing.Size(121, 21);
+            this.cbxBophan.Size = new System.Drawing.Size(146, 21);
             this.cbxBophan.TabIndex = 54;
-            // 
-            // cbxChucvu
-            // 
-            this.cbxChucvu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxChucvu.FormattingEnabled = true;
-            this.cbxChucvu.Location = new System.Drawing.Point(658, 193);
-            this.cbxChucvu.Name = "cbxChucvu";
-            this.cbxChucvu.Size = new System.Drawing.Size(121, 21);
-            this.cbxChucvu.TabIndex = 53;
             // 
             // dtNgaySinh
             // 
-            this.dtNgaySinh.Location = new System.Drawing.Point(125, 194);
+            this.dtNgaySinh.Location = new System.Drawing.Point(658, 127);
             this.dtNgaySinh.Name = "dtNgaySinh";
-            this.dtNgaySinh.Size = new System.Drawing.Size(137, 21);
+            this.dtNgaySinh.Size = new System.Drawing.Size(146, 21);
             this.dtNgaySinh.TabIndex = 52;
             // 
             // txtDienthai
             // 
-            this.txtDienthai.Location = new System.Drawing.Point(379, 192);
+            this.txtDienthai.Location = new System.Drawing.Point(658, 192);
             this.txtDienthai.Name = "txtDienthai";
             this.txtDienthai.Size = new System.Drawing.Size(146, 21);
             this.txtDienthai.TabIndex = 51;
@@ -171,7 +149,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 195);
+            this.label11.Location = new System.Drawing.Point(563, 124);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 19);
             this.label11.TabIndex = 47;
@@ -201,21 +179,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(284, 193);
+            this.label8.Location = new System.Drawing.Point(564, 191);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 19);
             this.label8.TabIndex = 44;
             this.label8.Text = "Điện Thoại:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(560, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 19);
-            this.label7.TabIndex = 43;
-            this.label7.Text = "Bằng Cấp:";
             // 
             // label6
             // 
@@ -226,16 +194,6 @@
             this.label6.Size = new System.Drawing.Size(64, 19);
             this.label6.TabIndex = 42;
             this.label6.Text = "Bộ Phận:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(560, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 19);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Chức Vụ:";
             // 
             // label3
             // 
@@ -356,9 +314,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.cbxMaNV);
-            this.Controls.Add(this.cbxBangcap);
             this.Controls.Add(this.cbxBophan);
-            this.Controls.Add(this.cbxChucvu);
             this.Controls.Add(this.dtNgaySinh);
             this.Controls.Add(this.txtDienthai);
             this.Controls.Add(this.txtEmail);
@@ -368,9 +324,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -395,9 +349,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.ComboBox cbxMaNV;
-        private System.Windows.Forms.ComboBox cbxBangcap;
         private System.Windows.Forms.ComboBox cbxBophan;
-        private System.Windows.Forms.ComboBox cbxChucvu;
         private System.Windows.Forms.DateTimePicker dtNgaySinh;
         private System.Windows.Forms.TextBox txtDienthai;
         private System.Windows.Forms.TextBox txtEmail;
@@ -407,9 +359,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

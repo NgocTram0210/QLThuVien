@@ -35,6 +35,9 @@ namespace QLThuVien
             if (Form1.boPhan != "BP2")
             {
                 btNhap.Enabled = false;
+                btLuu.Enabled = false;
+                btSua.Enabled = false;
+                btXoa.Enabled = false;
             }
 
             //load dữ liệu cho cbx mã sách và girdview
@@ -45,14 +48,6 @@ namespace QLThuVien
             cbxMaSach.DisplayMember = "Mã Sách";
             cbxMaSach.ValueMember = "Mã Sách";
             dgvSach.DataSource = ds.Tables[0];
-
-            //load dữ liệu cho cbx loại sách
-            strSQL = @"select * from THELOAISACH";
-            ds = new DataSet();
-            ds = DataConnection.GetDataSet(strSQL);
-            cbxLoai.DataSource = ds.Tables[0];
-            cbxLoai.DisplayMember = "TenTheLoai";
-            cbxLoai.ValueMember = "MaLoai";
 
             //load dữ liệu cho cbx nhân viên
             strSQL = @"select * from NHANVIEN where BoPhan ='BP2'";
@@ -65,13 +60,12 @@ namespace QLThuVien
             //load dữ liệu ban đầu cho các textbox
             cbxMaSach.Text = dgvSach[0, 0].Value.ToString();
             txtTen.Text = dgvSach[1, 0].Value.ToString();
-            txtTacgia.Text = dgvSach[3, 0].Value.ToString();
-            txtNamXB.Text = dgvSach[4, 0].Value.ToString();
-            txtNXB.Text = dgvSach[5, 0].Value.ToString();
-            dtNgaynhap.Text = dgvSach[6, 0].Value.ToString();
-            txtTrigia.Text = dgvSach[7, 0].Value.ToString();
-            cbxLoai.SelectedValue = dgvSach[2, 0].Value.ToString();
-            cbxNVNhan.SelectedValue = dgvSach[8, 0].Value.ToString();
+            txtTacgia.Text = dgvSach[2, 0].Value.ToString();
+            txtNamXB.Text = dgvSach[3, 0].Value.ToString();
+            txtNXB.Text = dgvSach[4, 0].Value.ToString();
+            dtNgaynhap.Text = dgvSach[5, 0].Value.ToString();
+            txtTrigia.Text = dgvSach[6, 0].Value.ToString();
+            cbxNVNhan.SelectedValue = dgvSach[7, 0].Value.ToString();
         }
 
         private void btNhap_Click(object sender, EventArgs e)
@@ -81,23 +75,23 @@ namespace QLThuVien
             txtTacgia.Text = "";
             txtTen.Text = "";
             txtTrigia.Text = "";
-            cbxLoai.SelectedIndex = -1;
             cbxMaSach.Text = "";
             cbxNVNhan.Text = "";
             btLuu.Enabled = true;
+            strSQL = @"select MaNV from NHANVIEN where Account = N'" + Form1.user + "'";
+            cbxNVNhan.SelectedValue = DataConnection.RunsqlScalar(strSQL);
         }
 
         private void dgvSach_MouseClick(object sender, MouseEventArgs e)
         {
             cbxMaSach.Text = dgvSach.CurrentRow.Cells[0].Value.ToString();
             txtTen.Text = dgvSach.CurrentRow.Cells[1].Value.ToString();
-            txtTacgia.Text = dgvSach.CurrentRow.Cells[3].Value.ToString();
-            txtNamXB.Text = dgvSach.CurrentRow.Cells[4].Value.ToString();
-            txtNXB.Text = dgvSach.CurrentRow.Cells[5].Value.ToString();
-            dtNgaynhap.Text = dgvSach.CurrentRow.Cells[6].Value.ToString();
-            txtTrigia.Text = dgvSach.CurrentRow.Cells[7].Value.ToString();
-            cbxLoai.SelectedValue = dgvSach.CurrentRow.Cells[2].Value.ToString();
-            cbxNVNhan.SelectedValue = dgvSach.CurrentRow.Cells[8].Value.ToString();
+            txtTacgia.Text = dgvSach.CurrentRow.Cells[2].Value.ToString();
+            txtNamXB.Text = dgvSach.CurrentRow.Cells[3].Value.ToString();
+            txtNXB.Text = dgvSach.CurrentRow.Cells[4].Value.ToString();
+            dtNgaynhap.Text = dgvSach.CurrentRow.Cells[5].Value.ToString();
+            txtTrigia.Text = dgvSach.CurrentRow.Cells[6].Value.ToString();
+            cbxNVNhan.SelectedValue = dgvSach.CurrentRow.Cells[7].Value.ToString();
             btLuu.Enabled = false;
         }
 
@@ -139,11 +133,10 @@ namespace QLThuVien
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            string l, nv;
-            l = cbxLoai.SelectedValue.ToString();
+            string nv;
             nv = cbxNVNhan.SelectedValue.ToString();
 
-            strSQL = @"update Sach set TenSach=N'" + txtTen.Text + "', NamXB='" + txtNamXB.Text + "', Loai='" + l + "', TacGia=N'" + txtTacgia.Text
+            strSQL = @"update Sach set TenSach=N'" + txtTen.Text + "', NamXB='" + txtNamXB.Text + "', TacGia=N'" + txtTacgia.Text
                 + "', NhaXB=N'" + txtNXB.Text + "', NgayNhap='" + dtNgaynhap.Value.ToString("yyyy/MM/dd") + "', TriGia='" + txtTrigia.Text
                 + "', NVTiepNhan='" + nv + "' where MaSach='" + cbxMaSach.Text + "'";
             t = DataConnection.RunsqlQuery(strSQL);
@@ -158,12 +151,11 @@ namespace QLThuVien
                 MessageBox.Show("Năm xuất bản không hợp lệ.");
             else
             {
-                string bc, bp, d;
-                bc = cbxLoai.SelectedValue.ToString();
+                string bp, d;
                 bp = cbxNVNhan.SelectedValue.ToString();
                 d = dtNgaynhap.Value.ToString("yyyy/MM/dd");
 
-                strSQL = @"insert into SACH values ('" + cbxMaSach.Text + "',N'" + txtTen.Text + "','" + bc + "',N'" + txtTacgia.Text + "','" + txtNamXB.Text + "',N'" + txtNXB.Text + "','" + d + "','" + txtTrigia.Text + "','" + bp + "')";
+                strSQL = @"insert into SACH values ('" + cbxMaSach.Text + "',N'" + txtTen.Text + "',N'" + txtTacgia.Text + "','" + txtNamXB.Text + "',N'" + txtNXB.Text + "','" + d + "','" + txtTrigia.Text + "','" + bp + "')";
                 t = DataConnection.RunsqlQuery(strSQL);
                 displayData();
             }
@@ -173,13 +165,12 @@ namespace QLThuVien
         {
             cbxMaSach.Text = dgvSach.CurrentRow.Cells[0].Value.ToString();
             txtTen.Text = dgvSach.CurrentRow.Cells[1].Value.ToString();
-            txtTacgia.Text = dgvSach.CurrentRow.Cells[3].Value.ToString();
-            txtNamXB.Text = dgvSach.CurrentRow.Cells[4].Value.ToString();
-            txtNXB.Text = dgvSach.CurrentRow.Cells[5].Value.ToString();
-            dtNgaynhap.Text = dgvSach.CurrentRow.Cells[6].Value.ToString();
-            txtTrigia.Text = dgvSach.CurrentRow.Cells[7].Value.ToString();
-            cbxLoai.SelectedValue = dgvSach.CurrentRow.Cells[2].Value.ToString();
-            cbxNVNhan.SelectedValue = dgvSach.CurrentRow.Cells[8].Value.ToString();
+            txtTacgia.Text = dgvSach.CurrentRow.Cells[2].Value.ToString();
+            txtNamXB.Text = dgvSach.CurrentRow.Cells[3].Value.ToString();
+            txtNXB.Text = dgvSach.CurrentRow.Cells[4].Value.ToString();
+            dtNgaynhap.Text = dgvSach.CurrentRow.Cells[5].Value.ToString();
+            txtTrigia.Text = dgvSach.CurrentRow.Cells[6].Value.ToString();
+            cbxNVNhan.SelectedValue = dgvSach.CurrentRow.Cells[7].Value.ToString();
             btLuu.Enabled = false;
         }
     }

@@ -26,6 +26,10 @@ namespace QLThuVien
 
         private void frmTraSach_Load(object sender, EventArgs e)
         {
+            if (Form1.boPhan != "BP1")
+            {
+                btnTraSach.Enabled = false;
+            }
             strSQL = @"SELECT b.MaPhieuMuon AS 'Mã Phiếu Mượn', d.HoTen AS 'Họ tên độc giả', c.TenSach AS 'Tên sách', b.NgayMuon AS 'Ngày Mượn', b.Han AS 'Hạn' FROM dbo.CTMUONSACH a, dbo.MUONSACH b, dbo.SACH c, dbo.DOCGIA d WHERE a.MaPM = b.MaPhieuMuon AND b.MADG = d.MaDG AND c.MaSach = a.SachMuon";
             ds = new DataSet();
             ds = DataConnection.GetDataSet(strSQL);
@@ -134,7 +138,11 @@ namespace QLThuVien
         {
             maPM = dgvSachMuon.CurrentRow.Cells[0].Value.ToString();
             maSach = dgvSachMuon.CurrentRow.Cells[2].Value.ToString();
-            btnTraSach.Enabled = true;
+            if (Form1.boPhan == "BP1")
+            {
+                btnTraSach.Enabled = true;
+            }
+
         }
     }
 }

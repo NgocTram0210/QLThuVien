@@ -34,7 +34,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbxNVNhan = new System.Windows.Forms.ComboBox();
             this.dtNgaynhap = new System.Windows.Forms.DateTimePicker();
-            this.cbxLoai = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSach = new System.Windows.Forms.DataGridView();
@@ -42,7 +41,6 @@
             this.txtNXB = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,9 +73,9 @@
             // 
             // txtTrigia
             // 
-            this.txtTrigia.Location = new System.Drawing.Point(633, 162);
+            this.txtTrigia.Location = new System.Drawing.Point(371, 124);
             this.txtTrigia.Name = "txtTrigia";
-            this.txtTrigia.Size = new System.Drawing.Size(137, 21);
+            this.txtTrigia.Size = new System.Drawing.Size(146, 21);
             this.txtTrigia.TabIndex = 92;
             this.txtTrigia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTrigia_KeyPress);
             // 
@@ -85,7 +83,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(544, 163);
+            this.label6.Location = new System.Drawing.Point(301, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 19);
             this.label6.TabIndex = 91;
@@ -94,8 +92,9 @@
             // cbxNVNhan
             // 
             this.cbxNVNhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNVNhan.Enabled = false;
             this.cbxNVNhan.FormattingEnabled = true;
-            this.cbxNVNhan.Location = new System.Drawing.Point(633, 199);
+            this.cbxNVNhan.Location = new System.Drawing.Point(633, 164);
             this.cbxNVNhan.Name = "cbxNVNhan";
             this.cbxNVNhan.Size = new System.Drawing.Size(137, 21);
             this.cbxNVNhan.TabIndex = 88;
@@ -106,15 +105,6 @@
             this.dtNgaynhap.Name = "dtNgaynhap";
             this.dtNgaynhap.Size = new System.Drawing.Size(137, 21);
             this.dtNgaynhap.TabIndex = 87;
-            // 
-            // cbxLoai
-            // 
-            this.cbxLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxLoai.FormattingEnabled = true;
-            this.cbxLoai.Location = new System.Drawing.Point(371, 124);
-            this.cbxLoai.Name = "cbxLoai";
-            this.cbxLoai.Size = new System.Drawing.Size(146, 21);
-            this.cbxLoai.TabIndex = 86;
             // 
             // label5
             // 
@@ -130,7 +120,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(523, 201);
+            this.label4.Location = new System.Drawing.Point(523, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 19);
             this.label4.TabIndex = 84;
@@ -179,16 +169,6 @@
             this.label11.Size = new System.Drawing.Size(103, 19);
             this.label11.TabIndex = 79;
             this.label11.Text = "Năm Xuất Bản:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(302, 124);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 19);
-            this.label10.TabIndex = 78;
-            this.label10.Text = "Loại:";
             // 
             // label9
             // 
@@ -321,7 +301,6 @@
             this.Controls.Add(this.btNhap);
             this.Controls.Add(this.cbxNVNhan);
             this.Controls.Add(this.dtNgaynhap);
-            this.Controls.Add(this.cbxLoai);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvSach);
@@ -329,7 +308,6 @@
             this.Controls.Add(this.txtNXB);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
@@ -356,7 +334,6 @@
         private System.Windows.Forms.Button btNhap;
         private System.Windows.Forms.ComboBox cbxNVNhan;
         private System.Windows.Forms.DateTimePicker dtNgaynhap;
-        private System.Windows.Forms.ComboBox cbxLoai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvSach;
@@ -364,7 +341,6 @@
         private System.Windows.Forms.TextBox txtNXB;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
